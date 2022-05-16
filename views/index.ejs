@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+    <h2>TO DO APP</h2>
+    <div id="box">
+      <div id="top">
+        <% tasks.forEach(elem => { %>
+          <div class="task">
+            <div id="td">
+              <h1><%=elem.task%></h1>
+              <h3><%= `${elem.date.getHours()%12}:${elem.date.getMinutes()}:${elem.date.getSeconds()}` %></h3>
+            </div>
+            <a href="/delete/<%= elem._id %> "><i  class="ri-delete-bin-6-line"></i></a>
+          </div>
+          <hr>
+         <% }); %> 
+      </div>
+    <form action="/post" method="post">
+
+      <input autofocus="true" autocomplete="off" type="text" name="task" placeholder="write the task here " id="">
+    </form>
+    </div>
+  
+</body>
+</html>
